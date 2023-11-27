@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`bg-[#0E0C07] text-[#D1D0CB]`}>
-        <div className="h-screen">
+        <div className="">
             <Header />
             <div className={`h-full`}>
                 {children}

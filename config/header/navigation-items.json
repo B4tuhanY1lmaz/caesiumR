@@ -1,0 +1,32 @@
+[
+  {
+    "title": "About",
+    "items": [
+      {
+        "title": "About Us",
+        "link": "/"
+      },
+      {
+        "title": "F.A.Q",
+        "link": "/"
+      },
+      {
+        "title": "Server Status",
+        "link": "/"
+      },
+      {
+        "title": "Buy us a Coffee!",
+        "link": "/"
+      }
+    ]
+  },
+  {
+    "title": "Community",
+    "items": [
+      {
+        "title": "Gallery",
+        "link": "/"
+      }
+    ]
+  }
+]
