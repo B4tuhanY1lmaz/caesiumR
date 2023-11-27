@@ -1,7 +1,6 @@
 import Header from "@/components/body/header";
 import Footer from "@/components/body/footer";
 
-import { SessionProvider } from "next-auth/react"
 import { Inter } from 'next/font/google'
 import './globals.css'
 

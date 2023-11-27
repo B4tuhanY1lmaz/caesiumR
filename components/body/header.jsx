@@ -1,7 +1,6 @@
 "use client"
 
 import items from "@/config/header/navigation-items.json"
-import { signIn } from "next-auth/react"
 
 import localFont from "next/font/local";
 import Image from "next/image"
@@ -16,8 +15,8 @@ const MinecraftFont = localFont({ src: './Minecraft.woff2' })
 
 function Header() {
     return (
-        <div className="h-12">
-            <div className={`flex w-full py-10 px-10 justify-between sm:px-20 ${MinecraftFont.className}`}>
+        <div className="h-12 top-0 sticky mb-10 z-20 bg-[#29271E]">
+            <div className={`flex w-full py-5 px-10 justify-between sm:px-20 ${MinecraftFont.className}`}>
                 <div className={`flex h-full items-center hover:underline`}>
                     <Link href="/" className="flex h-full items-center mt-2">
                         <Image
@@ -50,7 +49,7 @@ function Header() {
                             </NavigationMenuList>
                         </NavigationMenu>
                         <div>
-                            <Button onClick={() => signIn("discord")} variant="outline">
+                            <Button variant="outline">
                                 Register / Log in
                             </Button>
                         </div>
