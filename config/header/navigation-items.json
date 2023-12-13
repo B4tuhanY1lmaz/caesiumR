@@ -26,6 +26,10 @@
       {
         "title": "Gallery",
         "link": "/"
+      },
+      {
+        "title": "Server Map",
+        "link": "https://map.tbnmc.xyz"
       }
     ]
   }

@@ -27,7 +27,7 @@ function Header() {
                         <p className={`ml-3`}>TBN SMP</p>
                     </Link>
                 </div>
-                <div className={`h-full flex items-center`}>
+                <div className={`h-full items-center hidden sm:flex`}>
                     <div className={`flex gap-3`}>
                         <NavigationMenu>
                             <NavigationMenuList>
