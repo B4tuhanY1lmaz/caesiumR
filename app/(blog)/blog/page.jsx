@@ -13,6 +13,7 @@ function BlogPage() {
                 <BlogCard 
                     title="Test Card 123"
                     description="Test description 123"
+                    image="/cards/map.png"
                 />
             </div>
         </div>
