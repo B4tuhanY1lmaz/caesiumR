@@ -20,16 +20,19 @@ function HomepageCards() {
                 type="map"
                 Header="Server Map"
                 Description="See what's going on at server without needing to log in!"
+                Link="https://map.tbnmc.xyz"
             />
             <GalleryMapCard
                 type="gallery"
                 Header="Photo Gallery"
                 Description="Beautiful moments of our server captured by our players!"
+                Link="/gallery"
             />
             <GalleryMapCard
                 type="blog"
                 Header="Server Updates"
                 Description="Updates of the server."
+                Link="/blog"
             />
             <DiscordCard
                 Header="Join our Community!"

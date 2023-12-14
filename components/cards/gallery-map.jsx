@@ -24,7 +24,7 @@ function GalleryMapCard({ type, Header, Description, Link }) {
                 </CardContent>
                 <CardFooter>
                     <Button className="bg-lime-800 ml-auto rounded-2xl mt-1" asChild>
-                        <a href="https://map.tbnmc.xyz">Visit</a>
+                        <a href={Link}>Visit</a>
                     </Button>
                 </CardFooter>
             </Card>
@@ -49,7 +49,7 @@ function GalleryMapCard({ type, Header, Description, Link }) {
                 </CardContent>
                 <CardFooter>
                     <Button className="bg-lime-800 ml-auto rounded-2xl mt-1" asChild>
-                        <a href="https://map.tbnmc.xyz">Visit</a>
+                        <a href={Link}>Visit</a>
                     </Button>
                 </CardFooter>
             </Card>
@@ -74,7 +74,7 @@ function GalleryMapCard({ type, Header, Description, Link }) {
                 </CardContent>
                 <CardFooter>
                     <Button className="bg-lime-800 ml-auto rounded-2xl mt-1" asChild>
-                        <a href="https://map.tbnmc.xyz">Visit</a>
+                        <a href={Link}>Visit</a>
                     </Button>
                 </CardFooter>
             </Card>
