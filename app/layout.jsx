@@ -14,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-stone-950/95 text-[#D1D0CB]`}>
+      <body className={`bg-[#132C33] text-[#D1D0CB]`}>
         <div className="h-full">
             <Header />
             <div className={``}>

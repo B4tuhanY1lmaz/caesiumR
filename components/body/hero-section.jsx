@@ -6,7 +6,7 @@ function HeroSection({ header, description, image }) {
     return (
         <div className="relative overflow-hidden bg-center h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px] xl:h-[350px] w-full z-0 rounded-2xl">
             <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full
-                overflow-hidden bg-fixed bg-black/60"
+                overflow-hidden bg-fixed bg-[#0F2227]"
             >
                 <div className={`flex flex-col h-full items-center justify-center ${MinecraftFont.className}`}>
                     <h1 className="text-lg sm:text-xl md:text-2xl lg:text-4xl mb-3 md:mb-10">{header}</h1>

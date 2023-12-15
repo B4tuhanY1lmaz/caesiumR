@@ -16,6 +16,7 @@ function BlogPage() {
                     image="/cards/map.png"
                     date="2023-12-17"
                     link="/"
+                    author="Batuhan Y. Yilmaz"
                 />
             </div>
         </div>

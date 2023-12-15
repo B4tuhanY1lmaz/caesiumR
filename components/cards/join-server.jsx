@@ -13,7 +13,7 @@ function JoinServerCard({ Header, Description, ServerIP }) {
 
     return (
         <div className="w-[300px] rounded-2xl">
-            <Card className="border-none bg-stone-700 rounded-xl">
+            <Card className="border-none bg-[#1B4049] rounded-xl">
                 <CardHeader>
                     <CardTitle>{Header}</CardTitle>
                 </CardHeader>

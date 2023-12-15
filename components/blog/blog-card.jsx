@@ -11,8 +11,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 function BlogCard({ title, description, link, date, image, avatarImg, author }) {
     return (
         <Link href={link}>
-            <Card className="rounded-2xl bg-stone-700 hover:bg-lime-800/50 border-none 
-            h-auto max-w-3xl justify-center mx-auto mb-5">
+            <Card className="rounded-2xl bg-[#1B4049] hover:bg-[#22505C] border-none 
+            h-auto w-[350px] md:w-[600px] xl:w-[750px] justify-center mx-auto mb-5">
                 <CardContent>
                     <div className="flex flex-col md:flex-row max-h-full pt-5">
                         <div className="max-w-[300px] mx-auto md:mx-0 md:mr-5">
@@ -26,7 +26,16 @@ function BlogCard({ title, description, link, date, image, avatarImg, author }) 
                         </div>
                         <div className="mt-5 md:mt-0 mx-auto md:mx-0 h-full">
                             <CardTitle>{title}</CardTitle>
-                            <p className="text-md mt-2">{description}</p>
+                            <p className="text-md mt-2 hidden md:flex">{description}</p>
+                            <div className="mt-2 md:mt-5 flex items-center">
+                                <Avatar className="h-6 w-6 mr-2">
+                                    <AvatarFallback>A</AvatarFallback>
+                                </Avatar>
+                                <p className="text-white text-xs mr-2">{author}</p>
+                                <CardDescription>
+                                    {new Date(date).toDateString()}
+                                </CardDescription>
+                            </div>
                         </div>
                     </div>
                 </CardContent>

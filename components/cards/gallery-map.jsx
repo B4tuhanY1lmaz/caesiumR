@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 function GalleryMapCard({ type, Header, Description, Link }) {
     if (type === "map") {
         return (
-            <Card className="rounded-2xl w-[300px] bg-stone-700 border-none">
+            <Card className="rounded-2xl w-[300px] bg-[#1B4049] border-none">
                 <CardHeader>
                     <CardTitle>{Header}</CardTitle>
                 </CardHeader>
@@ -33,7 +33,7 @@ function GalleryMapCard({ type, Header, Description, Link }) {
 
     if (type === "gallery") {
         return (
-            <Card className="rounded-2xl w-[300px] bg-stone-700 border-none">
+            <Card className="rounded-2xl w-[300px] bg-[#1B4049] border-none">
                 <CardHeader>
                     <CardTitle>{Header}</CardTitle>
                 </CardHeader>
@@ -58,7 +58,7 @@ function GalleryMapCard({ type, Header, Description, Link }) {
 
     if (type === "blog") {
         return (
-            <Card className="rounded-2xl w-[300px] bg-stone-700 border-none">
+            <Card className="rounded-2xl w-[300px] bg-[#1B4049] border-none">
                 <CardHeader>
                     <CardTitle>{Header}</CardTitle>
                 </CardHeader>
