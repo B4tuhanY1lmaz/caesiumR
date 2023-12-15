@@ -9,13 +9,14 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem,
-NavigationMenuTrigger, NavigationMenuList, } from "@/components/ui/navigation-menu";
+NavigationMenuTrigger, NavigationMenuList, } from "@/components/ui/navigation-menu"
+import UserButton from "./user-button"
 
 const MinecraftFont = localFont({ src: './Minecraft.woff2' })
 
 function Header() {
     return (
-        <div className="top-2 sticky my-5 mx-10 z-20">
+        <div className="top-2 sticky my-5 mx-10 md:mx-15 lg:mx-20 xl:mx-40 2xl:mx-80 z-20">
             <div className={`flex w-full py-5 px-10 justify-between sm:px-20 bg-[#1B4049] rounded-2xl ${MinecraftFont.className}`}>
                 <div className={`flex h-full items-center hover:underline`}>
                     <Link href="/" className="flex h-full items-center mt-2">
@@ -48,11 +49,7 @@ function Header() {
 
                             </NavigationMenuList>
                         </NavigationMenu>
-                        <div>
-                            <Button variant="outline">
-                                Register / Log in
-                            </Button>
-                        </div>
+                        <UserButton />
                     </div>
                 </div>
             </div>
