@@ -1,7 +1,10 @@
-
-
 import HeroImage from "@/components/body/hero-image"
 import HomepageCards from "@/components/body/homepage-cards"
+
+export const metadata = {
+    title: "CaesiumR"
+}
+
 export default function Home() {
 
   return (

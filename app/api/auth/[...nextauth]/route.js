@@ -3,7 +3,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter"
 import DiscordProvider from "next-auth/providers/discord"
 import { db } from "@/lib/db"
 
-const prisma = db()
+const prisma = db
 
 export const authOptions = {
     adapter: PrismaAdapter(prisma),
@@ -14,9 +14,9 @@ export const authOptions = {
             profile(profile) {
                 return {
                     id: profile.id,
-                    name: profile.name,
+                    name: profile.username,
                     email: profile.email,
-                    image: profile.picture,
+                    image: profile.image_url,
                     role: profile.role ?? 'USER'
                 }
             }
@@ -29,7 +29,7 @@ export const authOptions = {
         }
     },
     pages: {
-        signIn: '/auth/signin'
+        // signIn: '/auth/signin'
     },
 }
 

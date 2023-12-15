@@ -1,6 +1,10 @@
 import HeroSection from "@/components/body/hero-section"
 import BlogCard from "@/components/blog/blog-card"
 
+export const metadata = {
+    title: "CaesiumR Blog"
+}
+
 function BlogPage() {
 
     return (
