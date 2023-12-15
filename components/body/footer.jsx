@@ -15,11 +15,7 @@ function Footer() {
     return (
         <footer className={`bg-stone-800/50 justify-center`}>
             <div className={`flex flex-wrap gap-20 px-5 sm:px-10 md:px-20 py-5 ${MinecraftFont.className}`}>
-                <div>
-                    <Image src="/assets/logo.png" alt={`Tbn Logo`} width={512} height={512}
-                           className="w-[128px] h-[128px] hidden sm:flex rounded-2xl"/>
-                </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col mx-auto">
                     <p className="text-2xl mb-2">The Batuhan's Network</p>
                     <div className="flex">
                         <div className="flex flex-col">
