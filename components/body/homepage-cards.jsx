@@ -26,7 +26,6 @@ function HomepageCards() {
                 type="gallery"
                 Header="Photo Gallery"
                 Description="Beautiful moments of our server captured by our players!"
-                Link="/gallery"
             />
             <GalleryMapCard
                 type="blog"

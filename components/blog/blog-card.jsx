@@ -27,18 +27,24 @@ function BlogCard({ title, description, link, date, image, avatarImg, author }) 
                         <div className="mt-5 md:mt-0 mx-auto md:mx-0 h-full">
                             <CardTitle>{title}</CardTitle>
                             <p className="text-md mt-2 hidden md:flex">{description}</p>
-                            <div className="mt-2 md:mt-5 flex items-center">
-                                <Avatar className="h-6 w-6 mr-2">
-                                    <AvatarFallback>A</AvatarFallback>
-                                </Avatar>
-                                <p className="text-white text-xs mr-2">{author}</p>
-                                <CardDescription>
-                                    {new Date(date).toDateString()}
-                                </CardDescription>
-                            </div>
                         </div>
                     </div>
                 </CardContent>
+                <CardFooter>
+                    <div className="flex w-full justify-between">
+                        <div className="flex items-center">
+                            <Avatar className="h-6 w-6 mr-2">
+                                <AvatarFallback>A</AvatarFallback>
+                            </Avatar>
+                            <p className="text-white text-xs mr-2 md:mr-0">{author}</p>
+                        </div>
+                        <div>
+                            <CardDescription>
+                                {new Date(date).toDateString()}
+                            </CardDescription>
+                        </div>
+                    </div>
+                </CardFooter>
             </Card>
         </Link>
     )
