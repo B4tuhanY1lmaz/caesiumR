@@ -4,13 +4,15 @@ import Link from "next/link"
 import Image from "next/image"
 
 import { Card, CardContent, CardDescription, 
-    CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "../ui/button"
+    CardFooter, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
 function BlogCard({ title, description, link, date, image, avatarImg, author }) {
+
+    const authorFirst = author.substring(0,1)
+
     return (
-        <Link href={link}>
+        <Link href={`/blog/${link}`}>
             <Card className="rounded-2xl bg-[#1B4049] hover:bg-[#22505C] border-none 
             h-auto w-[350px] md:w-[600px] xl:w-[750px] justify-center mx-auto mb-5">
                 <CardContent>
@@ -34,7 +36,8 @@ function BlogCard({ title, description, link, date, image, avatarImg, author }) 
                     <div className="flex w-full justify-between">
                         <div className="flex items-center">
                             <Avatar className="h-6 w-6 mr-2">
-                                <AvatarFallback>A</AvatarFallback>
+                                <AvatarImage src={avatarImg} />
+                                <AvatarFallback>{authorFirst}</AvatarFallback>
                             </Avatar>
                             <p className="text-white text-xs mr-2 md:mr-0">{author}</p>
                         </div>

@@ -9,13 +9,16 @@ import {
 import { User, Settings, LifeBuoy, LogOut } from "lucide-react";
 
 import { useSession, signIn, signOut } from "next-auth/react"
+import localFont from "next/font/local";
+
+const MinecraftFont = localFont({ src: './Minecraft.woff2' })
 
 function UserButton() {
     const { data: session, status } = useSession()
 
-    console.log(session)
-
     if (status === "authenticated") {
+        const username = session?.user.name
+        const userNameFirst =  username.substring(0, 1)
         return (
             <div>
                 <DropdownMenu>
@@ -23,14 +26,16 @@ function UserButton() {
                         <Button variant="ghost" className="items-center">
                             <Avatar className="w-8 h-8">
                                 <AvatarImage src={session?.user.image} />
+                                <AvatarFallback>{userNameFirst.toUpperCase()}</AvatarFallback>
                             </Avatar>
                         </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent>
+                    <DropdownMenuContent className={MinecraftFont.className}>
                         <DropdownMenuLabel>
                             <div className="items-center flex">
                                 <Avatar className="w-10 h-10">
                                     <AvatarImage src={session?.user.image} />
+                                    <AvatarFallback>{userNameFirst.toUpperCase()}</AvatarFallback>
                                 </Avatar>
                                 <p className="text-lg ml-2">{session?.user.name}</p>
                             </div>

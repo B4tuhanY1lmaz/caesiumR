@@ -70,6 +70,8 @@ model Blog {
   updatedAt   DateTime   @updatedAt
   title       String
   description String?
+  image       String?
+  content     String?
   author      User       @relation(fields: [authorId], references: [id])
   authorId    String
   isPosted    Boolean    @default(false)

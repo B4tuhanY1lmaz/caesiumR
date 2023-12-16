@@ -6,7 +6,7 @@ import DiscordCard from "@/components/cards/discord-invite"
 
 function HomepageCards() {
     return (
-        <div className="flex flex-wrap gap-4 justify-center w-auto">
+        <div className="flex flex-wrap flex-grow gap-4 justify-center w-auto">
             <JoinServerCard
                 Header="Join Server"
                 Description="To - Do. Implement a Server API to get the information"

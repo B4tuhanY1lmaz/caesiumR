@@ -34,10 +34,10 @@ function Header() {
                             <NavigationMenuList>
                                 {items.map((item) => (
                                     <NavigationMenuItem key={item.title}>
-                                        <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-                                        <NavigationMenuContent>
+                                        <NavigationMenuTrigger className="bg-transparent">{item.title}</NavigationMenuTrigger>
+                                        <NavigationMenuContent className="bg-[#0C1B20]">
                                             {item.items.map((content) => (
-                                                    <Button key={content.title} asChild>
+                                                    <Button variant="ghost" key={content.title} asChild>
                                                         <Link href={content.link}>
                                                             {content.title}
                                                         </Link>
