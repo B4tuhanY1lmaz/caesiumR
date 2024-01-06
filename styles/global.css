@@ -43,3 +43,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer base {
+  main {
+    @apply h-full
+  }
+
+  .main-layout {
+    @apply px-10 lg:px-20 xl:px-40 2xl:px-80
+  }
+
+  .card-layout {
+    @apply my-5 max-w-6xl flex justify-center w-auto mx-auto
+  }
+}

@@ -71,7 +71,7 @@ model Blog {
   title       String
   description String?
   image       String?
-  content     String?
+  content     String?    @db.Text
   author      User       @relation(fields: [authorId], references: [id])
   authorId    String
   isPosted    Boolean    @default(false)

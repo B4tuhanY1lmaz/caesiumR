@@ -13,7 +13,7 @@ import { SiFeedly } from "react-icons/si"
 
 function Footer() {
     return (
-        <footer className={`bg-stone-800/50 justify-center`}>
+        <footer className={`bg-stone-800/50 justify-center bottom-0`}>
             <div className={`flex flex-wrap gap-20 px-5 sm:px-10 md:px-20 py-5 ${MinecraftFont.className}`}>
                 <div className="flex flex-col mx-auto">
                     <p className="text-2xl mb-2">The Batuhan's Network</p>

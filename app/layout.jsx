@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <SessionProvider>
             <div className="h-full">
                 <Header />
-                <div className={``}>
+                <div className={`main-layout`}>
                     {children}
                 </div>
                 <Footer />
