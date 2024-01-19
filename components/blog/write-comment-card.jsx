@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 
-import { useParams } from "next/navigation"
+import axios from "axios"
+import qs from "query-string"
+import { useParams, useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import { useState, useEffect } from "react"
 import { useSession, signIn } from "next-auth/react"
@@ -32,25 +34,19 @@ function WriteCommentCard() {
 
     function CardsContent() {
         const params = useParams()
+        const router = useRouter()
         const slug = params.slug
         const onSubmit = async (data) => {
-            const response = await fetch(`/api/comments`, {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: {
-                    "Content-Type": "application/json"
-                },
+            const url = qs.stringifyUrl({
+                url: `/api/comments`,
+                query: {
+                    postId: params?.slug
+                }
             })
-
-            console.log(response)
-
-            if (!response.ok) {
-                alert("There was an error.")
-            }
-
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-
+            const values = JSON.stringify(data)
+            await axios.post(url, values)
             reset()
+            router.refresh()
         }
 
         return (

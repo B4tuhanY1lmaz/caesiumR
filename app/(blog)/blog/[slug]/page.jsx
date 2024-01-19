@@ -10,6 +10,7 @@ async function BlogPostPage(props) {
     const slug = props.params.slug
     const PostContent = await getPostContent(slug)
     const PostComments = await getPostComments(slug)
+    const PostCommentsReversed = PostComments.slice().reverse()
 
     return (
         <>
@@ -34,7 +35,7 @@ async function BlogPostPage(props) {
                     <p className="text-2xl font-bold mb-3 w-full text-center">Comments</p>
                     <div>
                         <WriteCommentCard/>
-                        {PostComments.map((comment) => (
+                        {PostCommentsReversed.map((comment) => (
                             <PostPageComments
                                 key={comment.content}
                                 author={comment.author.name}
