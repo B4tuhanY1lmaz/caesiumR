@@ -16,7 +16,7 @@ function PostPageComments({ author, content, date }) {
                                 <p className="text-xs font-light ml-2">{new Date().toDateString()}</p>
                             </div>
                         </CardTitle>
-                        <p className="text-md mt-2 hidden md:flex">{content}</p>
+                        <p className="text-md mt-2">{content}</p>
                     </div>
                 </div>
             </CardContent>
