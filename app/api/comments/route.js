@@ -12,22 +12,8 @@ export async function POST(request, { params }) {
         if (!session) {
             return new NextResponse("Unauthorized", { status: 401 })
         }
-        if (!postId) {
-            return new NextResponse("PostID is missing", { status: 400 })
-        }
 
-        const user = await db.user.findUnique({
-            where: {
-                email: session.email,
-                name: session.name
-            }
-        })
-        console.log(session)
-        console.log(user)
-
-         // const server = await db.comments.create({})
-
-
+        return new NextResponse("Success", { status: 200 })
 
     } catch (error) {
         console.log("[NEW_COMMENT]", error)

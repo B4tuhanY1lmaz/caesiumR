@@ -34,7 +34,7 @@ function WriteCommentCard() {
         const params = useParams()
         const slug = params.slug
         const onSubmit = async (data) => {
-            const response = await fetch(`/blog/${slug}/api`, {
+            const response = await fetch(`/api/comments`, {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
