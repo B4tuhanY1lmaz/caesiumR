@@ -15,7 +15,7 @@ async function BlogPostPage(props) {
     return (
         <>
             <div>
-                <div>
+                <div className="px-10">
                     <HeroHeader
                         header={PostContent.title}
                         date={PostContent.date}

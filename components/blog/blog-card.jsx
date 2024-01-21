@@ -14,15 +14,15 @@ function BlogCard({ title, description, link, date, image, avatarImg, author }) 
     return (
         <Link href={`/blog/${link}`}>
             <Card className="rounded-2xl bg-[#1B4049] hover:bg-[#22505C] border-none 
-            h-auto w-[350px] md:w-[600px] xl:w-[750px] justify-center mx-auto mb-5">
+            h-auto w-[250px] sm:w-[350px] md:w-[600px] xl:w-[750px] mx-auto mb-5">
                 <CardContent>
                     <div className="flex flex-col md:flex-row max-h-full pt-5">
-                        <div className="max-w-[300px] mx-auto md:mx-0 md:mr-5">
+                        <div className="mx-auto md:mx-0 md:mr-5">
                             <Image
-                                className="rounded-2xl md:h-auto max-w-3xl min-w-[300px] mx-auto"
+                                className="object-cover rounded-2xl h-auto mx-auto"
                                 src={image}
-                                width={300}
-                                height={300}
+                                width={200}
+                                height={200}
                                 alt="" 
                             />
                         </div>

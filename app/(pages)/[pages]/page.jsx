@@ -18,7 +18,7 @@ function MarkPages(props) {
 
     return (
         <div>
-            <div>
+            <div className="px-10">
                 <HeroSection
                     header={content.data.title}
                 />

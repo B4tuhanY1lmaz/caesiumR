@@ -17,7 +17,7 @@ async function BlogPage() {
                 header="Server Blog"
                 description="Updates about server and community." 
             />
-            <div className="container justify-center mx-auto pt-5">
+            <div className="container justify-center w-full mx-auto pt-5">
                 {posts.map((post) => (
                     <BlogCard
                         author={post.author.name}

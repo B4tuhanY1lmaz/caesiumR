@@ -19,10 +19,10 @@ function BlogSuggestedCard({ title, link, date, image, avatarImg, author }) {
                     <div className="flex flex-col max-h-full pt-5">
                         <div className="max-w-[300px] mx-auto md:mx-0 md:mr-5">
                             <Image
-                                className="rounded-2xl max-w-3xl mx-auto"
+                                className="rounded-2xl h-auto mx-auto"
                                 src={image}
-                                width={300}
-                                height={300}
+                                width={200}
+                                height={200}
                                 alt="" 
                             />
                         </div>
