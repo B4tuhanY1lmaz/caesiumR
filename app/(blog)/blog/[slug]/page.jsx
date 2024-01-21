@@ -12,10 +12,9 @@ async function BlogPostPage(props) {
     const PostComments = await getPostComments(slug)
     const SuggestedPosts = await getSuggestedPosts(slug)
 
-    console.log(SuggestedPosts)
     return (
         <>
-            <div className="min-h-screen h-full">
+            <div>
                 <div>
                     <HeroHeader
                         header={PostContent.title}
@@ -31,7 +30,7 @@ async function BlogPostPage(props) {
                         {PostContent.content}
                     </Markdown>
                 </article>
-                <div className="container mx-auto max-w-[768px]">
+                <div className="container mx-auto max-w-4xl">
                     <hr className="h-px mt-5 mb-3 bg-gray-500 border-0 justify-center"></hr>
                     <p className="text-2xl font-bold mb-3 w-full text-center">Suggested Posts</p>
                     <BlogSuggestedCarousel

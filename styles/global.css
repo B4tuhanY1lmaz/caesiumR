@@ -50,10 +50,13 @@
   }
 
   .main-layout {
-    @apply px-10 lg:px-20 xl:px-40 2xl:px-80
+    @apply px-0 sm:px-10 lg:px-20 xl:px-40 2xl:px-80
   }
 
   .card-layout {
     @apply my-5 max-w-6xl flex justify-center w-auto mx-auto
+  }
+  .hero-layout {
+    @apply px-10 rounded-2xl
   }
 }

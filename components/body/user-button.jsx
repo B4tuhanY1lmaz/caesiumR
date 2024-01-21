@@ -10,11 +10,13 @@ import { User, Settings, LifeBuoy, LogOut } from "lucide-react";
 
 import { useSession, signIn, signOut } from "next-auth/react"
 import localFont from "next/font/local";
+import { useRouter } from "next/navigation"
 
 const MinecraftFont = localFont({ src: './Minecraft.woff2' })
 
 function UserButton() {
     const { data: session, status } = useSession()
+    const router = useRouter()
 
     if (status === "authenticated") {
         const username = session?.user.name
@@ -46,6 +48,12 @@ function UserButton() {
                                 <p>My Profile</p>
                                 <User className="ml-auto h-4 w-4"/>
                             </DropdownMenuItem>
+                            {session?.user.role !== "USER" && (
+                                <DropdownMenuItem onClick={() => router.push("/dash")}>
+                                    <p>Dashboard</p>
+                                    <Settings className="ml-auto h-4 w-4"/>
+                                </DropdownMenuItem>
+                                )}
                             <DropdownMenuItem>
                                 <p>Settings</p>
                                 <Settings className="ml-auto h-4 w-4"/>

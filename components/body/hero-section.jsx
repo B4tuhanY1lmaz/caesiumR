@@ -1,10 +1,11 @@
 "use client"
 import localFont from "next/font/local";
+import Link from "next/link";
 
 const MinecraftFont = localFont({ src: './Minecraft.woff2' })
-function HeroSection({ header, description, image }) {
+function HeroSection({ header, description }) {
     return (
-        <div className="relative overflow-hidden bg-center h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px] xl:h-[350px] w-full z-0 rounded-2xl">
+        <div className="relative overflow-hidden h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px] xl:h-[350px] z-0 hero-layout">
             <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full
                 overflow-hidden bg-fixed bg-[#0F2227]"
             >

@@ -16,7 +16,6 @@ function HeroImage({ header, description, image }) {
                 <div className={`flex flex-col h-full items-center justify-center ${MinecraftFont.className}`}>
                     <h1 className="text-lg sm:text-xl md:text-2xl mb-3">{header}</h1>
                     <p className="px-5 justify-center mb-3 text-xs sm:text-md md:text-lg text-center">{description}</p>
-                    <p className="text-green-500 text-xs md:text-sm">Server is Online! | 1.20.1 + EasyAuth + Terralith</p>
                 </div>
             </div>
         </div>

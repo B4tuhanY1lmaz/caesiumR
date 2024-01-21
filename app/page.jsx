@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <main>
-        <div>
+        <div className="px-10">
             <HeroImage
                 header={"The Batuhan's Network SMP"}
                 description="A cracked SMP server with tweaks over Vanilla Minecraft"

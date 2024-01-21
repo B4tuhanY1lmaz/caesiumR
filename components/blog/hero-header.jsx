@@ -4,6 +4,7 @@ import Image from "next/image"
 import localFont from "next/font/local";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from "next/link";
 
 const MinecraftFont = localFont({ src: './Minecraft.woff2' })
 

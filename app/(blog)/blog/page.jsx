@@ -1,30 +1,23 @@
+import { getPostMetadata } from "@/lib/getPostMetadata"
+
 import HeroSection from "@/components/body/hero-section"
 import BlogCard from "@/components/blog/blog-card"
 
-import { db } from "@/lib/db"
 export const metadata = {
     title: "CaesiumR Blog"
 }
 
 async function BlogPage() {
 
-    const posts = await db.blog.findMany({
-        where: {
-            isPosted: true,
-        },
-        include: {
-            author: true,
-            categories: true
-        }
-    })
+    const posts = await getPostMetadata()
 
     return (
-        <div>
+        <div className="px-10">
             <HeroSection
                 header="Server Blog"
                 description="Updates about server and community." 
             />
-            <div className="px-10 md:px-20 lg:px-30 w-full justify-center mx-auto pt-10">
+            <div className="container justify-center mx-auto pt-5">
                 {posts.map((post) => (
                     <BlogCard
                         author={post.author.name}

@@ -1,3 +1,6 @@
+---
+title: About this server
+---
 ## The Batuhan's Network SMP
 - A cracked SMP server with some tweaks over Vanilla Minecraft.
 - Near zero rule experience!

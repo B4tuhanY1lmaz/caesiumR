@@ -5,9 +5,8 @@ import items from "@/config/header/navigation-items.json"
 import localFont from "next/font/local";
 import Image from "next/image"
 import Link from "next/link"
-import { cn } from "@/lib/utils"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem,
 NavigationMenuTrigger, NavigationMenuList, } from "@/components/ui/navigation-menu"
 import UserButton from "./user-button"
