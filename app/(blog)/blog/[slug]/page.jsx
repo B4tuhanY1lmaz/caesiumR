@@ -1,17 +1,18 @@
-import { getPostContent, getPostComments } from "@/lib/getPostContent"
+import { getPostContent, getSuggestedPosts, getPostComments } from "@/lib/getPostContent"
 import Markdown from "markdown-to-jsx";
 
-import { Separator } from "@/components/ui/separator"
 import HeroHeader from "@/components/blog/hero-header"
 import PostPageComments from "@/components/blog/comment-card"
 import WriteCommentCard from "@/components/blog/write-comment-card"
+import BlogSuggestedCarousel from "@/components/blog/blog-suggested-carousel";
 
 async function BlogPostPage(props) {
     const slug = props.params.slug
     const PostContent = await getPostContent(slug)
     const PostComments = await getPostComments(slug)
-    const PostCommentsReversed = PostComments.slice().reverse()
+    const SuggestedPosts = await getSuggestedPosts(slug)
 
+    console.log(SuggestedPosts)
     return (
         <>
             <div className="min-h-screen h-full">
@@ -30,12 +31,19 @@ async function BlogPostPage(props) {
                         {PostContent.content}
                     </Markdown>
                 </article>
-                <div className="container mx-auto max-w-4xl">
+                <div className="container mx-auto max-w-[768px]">
                     <hr className="h-px mt-5 mb-3 bg-gray-500 border-0 justify-center"></hr>
+                    <p className="text-2xl font-bold mb-3 w-full text-center">Suggested Posts</p>
+                    <BlogSuggestedCarousel
+                        SuggestedPosts={SuggestedPosts}
+                    />
+                </div>
+                <div className="container mx-auto max-w-[768px]">
+                <hr className="h-px mt-5 mb-3 bg-gray-500 border-0 justify-center"></hr>
                     <p className="text-2xl font-bold mb-3 w-full text-center">Comments</p>
                     <div>
                         <WriteCommentCard/>
-                        {PostCommentsReversed.map((comment) => (
+                        {PostComments.map((comment) => (
                             <PostPageComments
                                 key={comment.content}
                                 author={comment.author.name}

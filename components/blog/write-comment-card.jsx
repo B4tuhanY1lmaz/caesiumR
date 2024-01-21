@@ -52,14 +52,14 @@ function WriteCommentCard() {
         return (
             <>
                 <CardContent>
-                    <div className="flex flex-col max-h-full pt-5">
+                    <div className="flex flex-col max-h-full pt-3">
                         <div className="mt-5 md:mt-0 mx-auto md:mx-0 h-full">
                             <CardTitle>
                                 <div className="flex w-full items-center">
-                                    <p className="text-white text-md mr-2 md:mr-0">To - Do:</p>
+                                    <p className="text-white text-md mr-2 md:mr-0">Write a comment</p>
                                 </div>
                             </CardTitle>
-                            <p className="text-md mt-2">Build a form with private api for Prisma</p>
+                            <p className="text-md mt-2">Don't forget to be nice!</p>
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <Textarea {...register("comment", { required: true, maxLength: 600 })}
                                           placeholder="Type here" className="bg-[#153137] border-none mt-2"
@@ -88,7 +88,7 @@ function WriteCommentCard() {
 
     return (
         <Card className="rounded-2xl bg-[#1B4049] hover:bg-[#22505C] border-none
-            h-auto w-[350px] md:w-[600px] xl:w-[750px] justify-center mx-auto mb-5">
+            h-auto w-[350px] md:w-[600px] justify-center mx-auto mb-5">
             {LoggedIn ? (
                 <CardsContent/>
             ) : (
