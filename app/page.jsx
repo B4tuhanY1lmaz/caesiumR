@@ -1,5 +1,6 @@
 import HeroImage from "@/components/body/hero-image"
 import HomepageCards from "@/components/body/homepage-cards"
+import HomepageContainer from "@/components/containers/homepage-container";
 
 export const metadata = {
     title: "CaesiumR"
@@ -16,9 +17,9 @@ export default function Home() {
                 image="/hero/4.png"
             />
         </div>
-      <div className="card-layout">
-            <div className="justify-center w-auto">
-                <HomepageCards />
+      <div>
+            <div className="justify-center">
+                <HomepageContainer />
             </div>
       </div>
     </main>

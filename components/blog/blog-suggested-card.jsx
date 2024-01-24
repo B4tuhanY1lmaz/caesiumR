@@ -17,7 +17,7 @@ function BlogSuggestedCard({ title, link, date, image, avatarImg, author }) {
             h-auto max-w-[350px] justify-center mx-auto mb-5">
                 <CardContent>
                     <div className="flex flex-col max-h-full pt-5">
-                        <div className="max-w-[300px] mx-auto md:mx-0 md:mr-5">
+                        <div className="max-w-[300px] mx-auto">
                             <Image
                                 className="rounded-2xl h-auto mx-auto"
                                 src={image}
@@ -36,7 +36,7 @@ function BlogSuggestedCard({ title, link, date, image, avatarImg, author }) {
                         <div className="flex items-center">
                             <Avatar className="h-6 w-6 mr-2">
                                 <AvatarImage src={avatarImg} />
-                                <AvatarFallback>{authorFirst}</AvatarFallback>
+                                <AvatarFallback>{authorFirst.toUpperCase()}</AvatarFallback>
                             </Avatar>
                             <p className="text-white text-xs mr-2">{author}</p>
                         </div>
