@@ -12,17 +12,19 @@ function JoinServerCard({ Header, Description, ServerIP }) {
     }
 
     return (
-        <div className="w-[300px] rounded-2xl">
-            <Card className="border-none bg-[#1B4049] rounded-xl">
-                <CardHeader>
-                    <CardTitle>{Header}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex flex-col gap-4">
-                    <div>
-                        <p>{Description}</p>
+        <div className="rounded-2xl">
+            <Card className="border-none bg-[#1B4049] rounded-2xl min-h-full">
+                <CardContent className="flex flex-wrap sm:flex-nowrap w-full gap-6 py-6">
+                    <div className="w-1/2 flex-col text-center mx-auto justify-center">
+                        <CardTitle className={"pb-4"}>{Header}</CardTitle>
+                        <p className="my-2 font-bold">1.20.1 + Voice Chat + Terralith</p>
+                        <p>Currently 12/60 Players online!</p>
                     </div>
-                    <div >
-                        <pre className="flex w-[250px] items-center justify-between bg-stone-800/75 p-2 rounded-2xl">
+                    <div className={"w-1/2 mx-auto justify-center"}>
+                        <Button className={"bg-lime-800 rounded-2xl w-full mb-3"} asChild>
+                            <p className="font-bold text-lg text-white">Server Rules</p>
+                        </Button>
+                        <pre className="flex items-center justify-between bg-stone-800/75 p-2 rounded-2xl overflow-hidden">
                             <code className="font-mono select-all">{ServerIP}</code>
                             <Button
                                 className="bg-lime-800 rounded-2xl"
@@ -31,6 +33,7 @@ function JoinServerCard({ Header, Description, ServerIP }) {
                                 Copy!
                             </Button>
                         </pre>
+
                     </div>
                 </CardContent>
             </Card>

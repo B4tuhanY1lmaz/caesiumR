@@ -9,7 +9,7 @@ function GalleryMapCard({ type, Header, Description, Link }) {
     if (type === "map") {
         return (
             <a href={Link}>
-                <Card className="rounded-2xl w-[300px] bg-[#1B4049] hover:bg-[#22505C] border-none">
+                <Card className="rounded-2xl bg-[#1B4049] hover:bg-[#22505C] border-none">
                     <CardHeader>
                         <CardTitle>{Header}</CardTitle>
                     </CardHeader>
@@ -31,7 +31,7 @@ function GalleryMapCard({ type, Header, Description, Link }) {
     if (type === "gallery") {
         return (
             <a href={Link}>
-                <Card className="rounded-2xl w-[300px] bg-[#1B4049] hover:bg-[#22505C] border-none">
+                <Card className="rounded-2xl bg-[#1B4049] hover:bg-[#22505C] border-none">
                     <CardHeader>
                         <CardTitle>{Header}</CardTitle>
                     </CardHeader>
@@ -53,7 +53,7 @@ function GalleryMapCard({ type, Header, Description, Link }) {
     if (type === "blog") {
         return (
             <a href={Link}>
-                <Card className="rounded-2xl w-[300px] bg-[#1B4049] hover:bg-[#22505C] border-none">
+                <Card className="rounded-2xl bg-[#1B4049] hover:bg-[#22505C] border-none">
                     <CardHeader>
                         <CardTitle>{Header}</CardTitle>
                     </CardHeader>

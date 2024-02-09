@@ -6,15 +6,19 @@ import DiscordCard from "@/components/cards/discord-invite"
 
 function HomepageCards() {
     return (
-        <div className="flex flex-wrap flex-grow gap-4 justify-center w-auto">
-            <JoinServerCard
-                Header="Join Server"
-                Description="To - Do. Implement a Server API to get the information"
-                ServerIP="play.tbnmc.xyz"
-            />
-            <RulesCard
-                Header="Server Rules"
-                Description="Server rules etc etc etc ... It'll use Markdown"
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 justify-center w-auto">
+            <div className="sm:col-span-2">
+                <JoinServerCard
+                    Header="Join Server"
+                    Description="To - Do. Implement a Server API to get the information"
+                    ServerIP="play.tbnmc.xyz"
+                />
+            </div>
+            <DiscordCard
+                Header="Join our Community!"
+                Description="Our community is more active over at Discord.
+                             Come and join us!"
+                InviteUrl="some-invite-url"
             />
             <GalleryMapCard
                 type="map"
@@ -32,12 +36,6 @@ function HomepageCards() {
                 Header="Server Updates"
                 Description="Updates of the server."
                 Link="/blog"
-            />
-            <DiscordCard
-                Header="Join our Community!"
-                Description="Our community is more active over at Discord.
-                             Come and join us!"
-                InviteUrl="some-invite-url"
             />
         </div>
     )

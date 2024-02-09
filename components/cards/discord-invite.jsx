@@ -12,15 +12,12 @@ function DiscordCard({ Header, Description, InviteUrl }) {
     }
 
     return (
-        <div className="w-[300px] rounded-2xl">
+        <div className="rounded-2xl hover:scale-110 transition duration-200">
             <Card className="border-none bg-indigo-500/75 rounded-xl">
                 <CardHeader>
                     <CardTitle>{Header}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-4">
-                    <div>
-                        <p>{Description}</p>
-                    </div>
                     <div >
                         <pre className="flex w-[250px] items-center justify-between bg-indigo-800/75 p-2 rounded-2xl">
                             <code className="font-mono select-all">{InviteUrl}</code>

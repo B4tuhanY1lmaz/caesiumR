@@ -50,7 +50,7 @@
   }
 
   .main-layout {
-    @apply px-0 sm:px-10 lg:px-20 xl:px-40 2xl:px-80
+    @apply px-0 max-w-[1000px] mx-auto
   }
 
   .card-layout {
