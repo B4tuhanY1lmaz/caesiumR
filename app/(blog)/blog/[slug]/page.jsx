@@ -1,5 +1,6 @@
 import { getPostContent, getSuggestedPosts, getPostComments } from "@/lib/getPostContent"
-import Markdown from "markdown-to-jsx";
+import Markdown from "markdown-to-jsx"
+import { notFound } from "next/navigation"
 
 import HeroHeader from "@/components/blog/hero-header"
 import PostPageComments from "@/components/blog/comment-card"
@@ -11,6 +12,10 @@ async function BlogPostPage(props) {
     const PostContent = await getPostContent(slug)
     const PostComments = await getPostComments(slug)
     const SuggestedPosts = await getSuggestedPosts(slug)
+
+    if (!PostContent) {
+        return notFound()
+    }
 
     return (
         <>

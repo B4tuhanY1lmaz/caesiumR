@@ -1,6 +1,7 @@
-import fs from "fs";
-import Markdown from "markdown-to-jsx";
-import matter from "gray-matter";
+import fs from "fs"
+import Markdown from "markdown-to-jsx"
+import matter from "gray-matter"
+import { notFound } from "next/navigation"
 
 import HeroSection from "@/components/body/hero-section"
 
@@ -15,6 +16,10 @@ const getPageContent = (page) => {
 function MarkPages(props) {
     const page = props.params.pages
     const content = getPageContent(page)
+
+    if (!content) {
+        return notFound()
+    }
 
     return (
         <div>
