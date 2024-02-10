@@ -53,7 +53,7 @@ function GalleryMapCard({ type, Header, Description, Link }) {
     if (type === "blog") {
         return (
             <a href={Link}>
-                <Card className="rounded-2xl bg-[#1B4049] hover:bg-[#22505C] border-none">
+                <Card className="rounded-2xl min-h-[300px] bg-[#1B4049] hover:bg-[#22505C] border-none">
                     <CardHeader>
                         <CardTitle>{Header}</CardTitle>
                     </CardHeader>
