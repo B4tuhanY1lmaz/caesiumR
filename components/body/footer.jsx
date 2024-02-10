@@ -13,10 +13,10 @@ import { SiFeedly } from "react-icons/si"
 
 function Footer() {
     return (
-        <footer className={`justify-center bottom-0 max-w-[1000px] mx-auto px-10`}>
+        <footer className={`bottom-0 max-w-[1000px] mx-auto px-10`}>
             <div className="rounded-2xl bg-[#1B4049] mb-5">
-                <div className={`flex flex-wrap gap-20 px-5 sm:px-10 md:px-20 py-5 ${MinecraftFont.className}`}>
-                    <div className="flex flex-col mx-auto">
+                <div className={`flex w-full justify-center p-5 ${MinecraftFont.className}`}>
+                    <div>
                         <p className="text-2xl mb-2">The Batuhan's Network</p>
                         <div className="flex">
                             <div className="flex flex-col">
@@ -42,7 +42,7 @@ function Footer() {
                                     Contact Us
                                 </Link>
                             </div>
-                            <div className="flex flex-col ml-20">
+                            <div className="flex flex-col ml-5 sm:ml-20">
                                 <Link
                                     href="/"
                                     className="flex items-center gap-2 text-md"

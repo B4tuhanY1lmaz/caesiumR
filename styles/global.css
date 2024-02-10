@@ -57,6 +57,6 @@
     @apply my-5 max-w-6xl flex justify-center w-auto mx-auto
   }
   .hero-layout {
-    @apply px-10 rounded-2xl
+    @apply mx-10 sm:mx-0 rounded-2xl
   }
 }

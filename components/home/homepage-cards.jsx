@@ -1,6 +1,5 @@
 
 import JoinServerCard from "@/components/cards/join-server"
-import RulesCard from "@/components/cards/rules"
 import GalleryMapCard from "@/components/cards/gallery-map"
 import DiscordCard from "@/components/cards/discord-invite"
 
@@ -21,18 +20,15 @@ function HomepageCards() {
                 InviteUrl="some-invite-url"
             />
             <GalleryMapCard
-                type="map"
                 Header="Server Map"
                 Description="See what's going on at server without needing to log in!"
                 Link="https://map.tbnmc.xyz"
             />
             <GalleryMapCard
-                type="gallery"
                 Header="Photo Gallery"
                 Description="Beautiful moments of our server captured by our players!"
             />
             <GalleryMapCard
-                type="blog"
                 Header="Server Updates"
                 Description="Updates of the server."
                 Link="/blog"

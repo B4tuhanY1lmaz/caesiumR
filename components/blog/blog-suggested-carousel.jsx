@@ -9,7 +9,7 @@ function BlogSuggestedCarousel({ SuggestedPosts }) {
             <Carousel className="w-3/4 mx-auto">
                 <CarouselContent>
                     {SuggestedPosts.map((post) => (
-                        <CarouselItem>
+                        <CarouselItem className="md:basis-1/2">
                             <BlogSuggestedCard
                                 author={post.author.name}
                                 image={post.image}
