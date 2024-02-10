@@ -11,14 +11,14 @@ import { SessionProvider } from "next-auth/react"
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-[#132C33] text-[#D1D0CB]`}>
+      <body className={`bg-gradient-to-br from-[#132C33] to-indigo-950 bg-cover text-[#D1D0CB]`}>
         <SessionProvider>
             <div className="h-full">
                 <Header />
-                <div className={`main-layout`}>
+                <div className={`main-layout min-h-screen`}>
                     {children}
+                    <Footer />
                 </div>
-                <Footer />
             </div>
         </SessionProvider>
       </body>

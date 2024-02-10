@@ -44,7 +44,7 @@ function UserButton() {
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => router.push(`/profile/${username}`)}>
                                 <p>My Profile</p>
                                 <User className="ml-auto h-4 w-4"/>
                             </DropdownMenuItem>
