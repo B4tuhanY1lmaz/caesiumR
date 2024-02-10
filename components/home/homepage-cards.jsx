@@ -27,6 +27,7 @@ function HomepageCards() {
             <GalleryMapCard
                 Header="Photo Gallery"
                 Description="Beautiful moments of our server captured by our players!"
+                Link="/photos"
             />
             <GalleryMapCard
                 Header="Server Updates"
