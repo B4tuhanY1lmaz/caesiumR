@@ -6,18 +6,19 @@ import ProfileHeroSection from "@/components/profile/hero-section"
 
 async function UserProfilePage(props) {
     const username = props.params.username
-    const user = await getPlayerProfile(username)
+    const users = await getPlayerProfile(username)
+    const user = users[0]
 
-    if(user.length === 0) {
+    if(!user) {
         return notFound()
     }
 
-    console.log(user)
-
     return (
-        <div className="py-5">
+        <div className="py-5 h-screen">
             <ProfileHeroSection
-                username={username}
+                username={user.name}
+                user_avatar={user.image}
+                role={user.role}
             />
         </div>
     )

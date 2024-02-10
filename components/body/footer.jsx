@@ -13,7 +13,7 @@ import { SiFeedly } from "react-icons/si"
 
 function Footer() {
     return (
-        <footer className={`bottom-0 max-w-[1000px] mx-auto px-10`}>
+        <footer className={`inset-x-0 bottom-0 max-w-[1000px] mx-auto px-10`}>
             <div className="rounded-2xl bg-[#1B4049] mb-5">
                 <div className={`flex w-full justify-center p-5 ${MinecraftFont.className}`}>
                     <div>

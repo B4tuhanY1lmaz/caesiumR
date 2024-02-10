@@ -1,10 +1,11 @@
 "use client"
 import localFont from "next/font/local";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 
 const MinecraftFont = localFont({ src: '../body/Minecraft.woff2' })
-function ProfileHeroSection({ username, user_avatar, bg_color }) {
+function ProfileHeroSection({ username, user_avatar, bg_color, role }) {
     const usernameFirst = username.substring(0, 1)
 
     return (
@@ -14,13 +15,23 @@ function ProfileHeroSection({ username, user_avatar, bg_color }) {
             >
                 <div className={`absolute h-1/2 inset-x-0 bottom-0 bg-black/50 backdrop-blur-xl ${MinecraftFont.className}`}>
                     <div className="flex">
-                        <Avatar className={"ml-10 w-24 h-24 -top-12 bg-transparent"}>
+                        <Avatar className={"ml-10 w-24 h-24 -top-12"}>
                             <AvatarImage src={user_avatar} />
                             <AvatarFallback className="bg-transparent backdrop-blur-3xl">
                                 <p className="text-3xl text-center items-center">{usernameFirst.toUpperCase()}</p>
                             </AvatarFallback>
                         </Avatar>
                         <h2 className={"ml-5 mt-2 text-2xl"}>{username}</h2>
+                        {role === "ADMIN" &&
+                            <Badge className="bg-rose-500/80 h-5 mt-2 ml-auto mr-3">
+                                Server Admin
+                            </Badge>
+                        }
+                        {role === "MODERATOR" &&
+                            <Badge className="bg-indigo-600/80 h-5 mt-2 ml-auto mr-3 text-white">
+                                Community Moderator
+                            </Badge>
+                        }
                     </div>
                 </div>
             </div>
