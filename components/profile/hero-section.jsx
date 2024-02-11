@@ -1,5 +1,5 @@
 "use client"
-import localFont from "next/font/local";
+import localFont from "next/font/local"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
@@ -13,6 +13,9 @@ function ProfileHeroSection({ username, user_avatar, bg_color, role }) {
             <div className={`bottom-0 left-0 right-0 top-0 h-full w-full
                 overflow-hidden bg-fixed bg-gradient-to-br from-indigo-600 via-pink-400 to-pink-700`}
             >
+                <div className="absolute inset-x-0 top-2">
+                    <a href={"/"} className={`text-white hover:underline ml-5 ${MinecraftFont.className}`}>{"< Go back"}</a>
+                </div>
                 <div className={`absolute h-1/2 inset-x-0 bottom-0 bg-black/50 backdrop-blur-xl ${MinecraftFont.className}`}>
                     <div className="flex">
                         <Avatar className={"ml-10 w-24 h-24 -top-12"}>

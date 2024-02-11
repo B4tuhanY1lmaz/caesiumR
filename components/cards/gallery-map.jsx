@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 function GalleryMapCard({ Header, Description, Link }) {
         return (
             <a href={Link}>
-                <Card className="rounded-2xl min-h-[300px] bg-[#1B4049] hover:bg-[#22505C] border-none">
+                <Card className="rounded-2xl min-h-[300px] bg-[#1B4049] hover:bg-gradient-to-r from-[#22505C] to-indigo-800 transition ease-in duration-300 border-none">
                     <CardHeader>
                         <CardTitle>{Header}</CardTitle>
                     </CardHeader>
