@@ -3,7 +3,6 @@
 import Header from "@/components/body/header";
 import Footer from "@/components/body/footer";
 
-import { Inter } from 'next/font/google'
 import '@/styles/global.css'
 
 import { SessionProvider } from "next-auth/react"

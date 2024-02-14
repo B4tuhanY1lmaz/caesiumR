@@ -1,9 +1,9 @@
 
-import AdminSidebar from "@/components/admin/admin-sidebar"
+import AdminHeader from "@/components/admin/header";
 function AdminDashboard() {
     return (
         <div>
-            <AdminSidebar />
+            <AdminHeader />
         </div>
     )
 }

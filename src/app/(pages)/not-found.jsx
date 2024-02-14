@@ -10,7 +10,7 @@ function NotFound() {
                 header="404"
                 description="The page you're looking for doesn't exist on this website."
             />
-            <Link href="/" className="hover:underline-offset-1 underline">Go back.</Link>
+            <Link href="/public" className="hover:underline-offset-1 underline">Go back.</Link>
         </div>
     )
 }

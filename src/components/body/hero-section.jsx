@@ -11,7 +11,7 @@ function HeroSection({ header, description }) {
                 overflow-hidden bg-fixed bg-[#0F2227]"
             >
                 <div className={`relative flex flex-col h-full items-center justify-center ${MinecraftFont.className}`}>
-                    <div className="absolute inset-x-0 top-2">
+                    <div className="absolute inset-x-0 top-2 mt-2">
                         <a href={"/"}
                            className={`text-white hover:underline ml-5 ${MinecraftFont.className}`}>{"< Go back"}</a>
                     </div>
