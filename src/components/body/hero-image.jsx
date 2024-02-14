@@ -7,7 +7,7 @@ function HeroImage({ header, description, image }) {
     return (
         <div className="w-full py-5">
             <div
-                className="relative overflow-hidden bg-center h-[150px] sm:h-[200px] md:h-[250px] lg:h-[300px] xl:h-[350px] w-full z-0 rounded-2xl">
+                className="relative overflow-hidden bg-center h-[250px] w-full z-0 rounded-2xl">
                 <Image src={image} alt={"Hero Image"}
                        width={1920} height={600}
                        className="justify-center mx-auto"
