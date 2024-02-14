@@ -1,6 +1,8 @@
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 
-async function getServerProfile() {
+export async function getServerProfile() {
+    const session = await getServerSession(authOptions)
 
+    return session
 }
