@@ -1,8 +1,23 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
+import { cn } from "@/lib/utils"
+
 import { Button } from "@/components/ui/button"
 
+function HeaderButton({ title, link }) {
+    const router = useRouter()
+    const pathname = usePathname()
+
+
+    return (
+        <Button className={cn(pathname === link && "bg-accent text-accent-foreground")}
+                variant={"ghost"} onClick={() => {router.push(link)}}>
+            {title}
+        </Button>
+    )
+}
 
 function AdminHeader() {
     return (
@@ -13,7 +28,14 @@ function AdminHeader() {
                 </div>
                 <div className={`h-full items-center hidden sm:flex`}>
                     <div className={`flex gap-3`}>
-
+                        <HeaderButton
+                            link={"/dash"}
+                            title={"Analytics"}
+                        />
+                        <HeaderButton
+                            link={"/dash/users"}
+                            title={"Users"}
+                        />
                     </div>
                 </div>
             </div>
