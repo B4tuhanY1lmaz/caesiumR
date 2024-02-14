@@ -1,4 +1,5 @@
-import { getAllUsers } from "@/lib/dbUsers";
+import { getAllUsers } from "@/lib/dbUsers"
+import { useRouter } from "next/navigation"
 
 import DataTable from "@/components/admin/data-table"
 import { columns } from "@/components/admin/users/tabel-colums"
@@ -6,8 +7,6 @@ import { columns } from "@/components/admin/users/tabel-colums"
 async function DashboardUsersPage() {
 
     const dbusers = await getAllUsers()
-
-    console.log(dbusers)
 
     return (
         <div className={"bg-[#1B4049] rounded-2xl min-h-[100px] mb-5"}>

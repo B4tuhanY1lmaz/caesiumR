@@ -1,20 +1,31 @@
 "use client"
+import React from "react"
 
 import { ColumnDef,
     flexRender,
     getCoreRowModel,
     getPaginationRowModel,
-    useReactTable } from "@tanstack/react-table"
+    useReactTable,
+    ColumnFiltersState,
+    getFilteredRowModel
+} from "@tanstack/react-table"
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
+import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 
 function DataTable({ columns, data }) {
+    const [sorting, setSorting] = React.useState([])
     const table = useReactTable({
         data,
         columns,
         getCoreRowModel: getCoreRowModel(),
-        getPaginationRowModel: getPaginationRowModel()
+        getPaginationRowModel: getPaginationRowModel(),
+        onSortingChange: setSorting,
+        getSortedRowModel: getCoreRowModel(),
+        state: {
+            sorting,
+        },
     })
 
     return (

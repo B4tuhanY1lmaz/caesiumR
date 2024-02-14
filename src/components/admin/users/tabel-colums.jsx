@@ -9,8 +9,20 @@ import {
     DropdownMenuItem
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import {ArrowUpDown, ChevronDown} from "lucide-react"
+import { Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
+
+import axios from "axios"
+import { useRouter } from "next/navigation"
+
+const updateRole = async (id, role) => {
+    const data = {
+        userId: id,
+        role: role
+    }
+    const values = JSON.stringify(data)
+    await axios.post("/dash/users/api", values)
+}
 
 export const columns = [
     {
@@ -40,7 +52,17 @@ export const columns = [
     },
     {
         accessoryKey: "name",
-        header: "Username",
+        id: "name",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "desc")}
+                    >
+                    <p>Username</p>
+                </Button>
+            )
+        },
         cell: ({ row }) => {
             const user = row.original
 
@@ -65,6 +87,10 @@ export const columns = [
         header: "Role",
         cell: ({ row }) => {
             const user = row.original
+            const handleUpdate = async (id, role) => {
+                await updateRole(id, role)
+
+            }
 
             return (
                 <DropdownMenu>
@@ -77,17 +103,17 @@ export const columns = [
                         <DropdownMenuLabel>Set user role</DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem
-                            onClick={() => (console.log("click"))}
+                            onClick={() => (handleUpdate(user.id, "ADMIN"))}
                         >
                             ADMIN
                         </DropdownMenuItem>
                         <DropdownMenuItem
-                            onClick={() => (console.log("click"))}
+                            onClick={() => (handleUpdate(user.id, "MODERATOR"))}
                         >
                             MODERATOR
                         </DropdownMenuItem>
                         <DropdownMenuItem
-                            onClick={() => (console.log("click"))}
+                            onClick={() => (handleUpdate(user.id, "USER"))}
                         >
                             MEMBER
                         </DropdownMenuItem>
