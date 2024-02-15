@@ -15,6 +15,7 @@ import { Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
 import axios from "axios"
 import { useRouter } from "next/navigation"
 
+
 const updateRole = async (id, role) => {
     const data = {
         userId: id,
@@ -22,6 +23,7 @@ const updateRole = async (id, role) => {
     }
     const values = JSON.stringify(data)
     await axios.post("/dash/users/api", values)
+    return window.location.reload()
 }
 
 export const columns = [
@@ -137,10 +139,24 @@ export const columns = [
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
                         <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                        <DropdownMenuSeparator />
                         <DropdownMenuItem onClick={() => navigator.clipboard.writeText(user.id)}>
-                            Copy User id
+                            Copy userId
+                        </DropdownMenuItem>
+                        <DropdownMenuItem onClick={() => (navigator.clipboard.writeText(user.email))}>
+                            Copy Email
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
+                        <DropdownMenuItem>
+                            Edit Member
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            Ban Member
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem className="text-rose-700">
+                            Delete Member
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             )

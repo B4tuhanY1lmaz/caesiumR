@@ -12,7 +12,6 @@ import { ColumnDef,
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
-import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 
 function DataTable({ columns, data }) {
     const [sorting, setSorting] = React.useState([])
