@@ -23,7 +23,7 @@ const updateRole = async (id, role) => {
     }
     const values = JSON.stringify(data)
     await axios.post("/dash/users/api", values)
-    return window.location.reload()
+    return
 }
 
 export const columns = [
