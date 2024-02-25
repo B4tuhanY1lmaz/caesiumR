@@ -4,6 +4,33 @@ import { getServerSession } from "next-auth"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 
 
+export async function GET(request) {
+    try {
+        const session = await getServerSession(authOptions)
+
+        if (!session) {
+           return new NextResponse("Unauthorized", { status: 401 })
+        }
+
+        const server = await db.user.findMany({
+            include: {
+                posts: true,
+                comments: true,
+                accounts: true,
+                sessions: true
+            },
+            orderBy: {
+                name: "desc"
+            }
+        })
+
+        return NextResponse.json(server)
+    } catch (e) {
+        console.log("[GET_USERS]", e)
+        return new NextResponse("Internal Server Error", { status: 500 })
+    }
+}
+
 export async function POST(request) {
     try {
         const session = await getServerSession(authOptions)
