@@ -10,19 +10,7 @@ import { Button } from "@/components/ui/button"
 function DashboardUsersPage() {
     const [users, setUsers] = useState([])
     const [loading, setLoading] = useState(false)
-
-    const refresh = async () => {
-        setLoading(true)
-        try {
-            const response = await axios.get("/dash/users/api")
-            console.log(response.data)
-            setUsers(response.data)
-        } catch (e) {
-            console.log(e)
-        }
-
-        setLoading(false)
-    }
+    const [refresh, setRefresh] = useState(0)
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -39,7 +27,7 @@ function DashboardUsersPage() {
         }
 
         fetchUsers()
-    }, []);
+    }, [refresh]);
 
 
     if (loading) {
@@ -58,7 +46,7 @@ function DashboardUsersPage() {
                 <h3 className={"text-center text-xl font-bold mb-3"}>Manage Users</h3>
                 <div className="container mx-auto py-10">
                     <DataTable columns={columns} data={users}/>
-                    <Button variant="ghost" onClick={() => refresh()}>Refresh</Button>
+                    <Button variant="ghost" onClick={() => setRefresh(refresh + 1)}>Refresh</Button>
                 </div>
             </div>
         </div>
