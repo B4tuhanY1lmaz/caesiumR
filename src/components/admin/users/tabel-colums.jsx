@@ -15,6 +15,7 @@ import { Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
 import axios from "axios"
 import { useRouter } from "next/navigation"
 
+// TODO: Finish this shit
 
 const updateRole = async (id, role) => {
     const data = {
@@ -152,6 +153,10 @@ export const columns = [
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                             Ban Member
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem className="text-rose-300">
+                            Terminate all sessions
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem className="text-rose-700">

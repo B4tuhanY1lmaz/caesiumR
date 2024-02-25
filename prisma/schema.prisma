@@ -38,16 +38,36 @@ model Session {
 }
 
 model User {
-  id            String     @id @default(cuid())
+  id            String      @id @default(cuid())
   name          String?
-  email         String?    @unique
+  email         String?     @unique
   emailVerified DateTime?
   image         String?
-  role          UserRole   @default(USER)
+  role          UserRole    @default(USER)
+  ban           UserBan[]
+  issuedBans    IssuedBan[]
   posts         Blog[]
   comments      Comments[]
   accounts      Account[]
   sessions      Session[]
+}
+
+model IssuedBan {
+  id         Int     @id @default(autoincrement())
+  issuer     User    @relation(fields: [issuerId], references: [id])
+  issuerId   String
+  bannedUser UserBan @relation(fields: [banId], references: [id])
+  banId      Int
+}
+
+model UserBan {
+  id        Int         @id @default(autoincrement())
+  user      User        @relation(fields: [userId], references: [id])
+  userId    String
+  IssuedBan IssuedBan[]
+  reason String @db.Text
+  issuedDate DateTime @default(now())
+  issuedUntil DateTime
 }
 
 enum UserRole {
