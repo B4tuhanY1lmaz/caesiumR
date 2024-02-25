@@ -1,6 +1,6 @@
 "use client"
 
-import items from "config/header/navigation-items.json"
+import items from "/config/header/navigation-items.json"
 
 import localFont from "next/font/local";
 import Image from "next/image"

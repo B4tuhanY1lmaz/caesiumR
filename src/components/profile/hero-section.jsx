@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 
 const MinecraftFont = localFont({ src: '../body/Minecraft.woff2' })
+
 function ProfileHeroSection({ username, user_avatar, bg_color, role }) {
     const usernameFirst = username.substring(0, 1)
 
