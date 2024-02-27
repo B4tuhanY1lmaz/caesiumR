@@ -27,6 +27,11 @@ const updateRole = async (id, role) => {
     return
 }
 
+const terminateSessions = async (id) => {
+    await axios.delete(`/dash/users/api/${id}/session`)
+    return
+}
+
 export const columns = [
     {
         accessoryKey: "avatar",
@@ -155,7 +160,7 @@ export const columns = [
                             Ban Member
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem className="text-rose-300">
+                        <DropdownMenuItem className="text-rose-300" onClick={() => terminateSessions(user.id)}>
                             Terminate all sessions
                         </DropdownMenuItem>
                         <DropdownMenuSeparator />
