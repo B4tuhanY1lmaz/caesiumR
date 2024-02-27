@@ -11,6 +11,9 @@ export async function GET(request) {
         if (!session) {
            return new NextResponse("Unauthorized", { status: 401 })
         }
+        if (session.user.role === "USER") {
+            return new NextResponse("Unauthorized", { status: 401 })
+        }
 
         const server = await db.user.findMany({
             include: {
