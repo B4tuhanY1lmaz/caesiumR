@@ -29,10 +29,10 @@ yarn-error.log*
 package-lock.json
 bun.lockb
 
-# local env files
+# local .env files
 .env*.local
-env
-env
+.env
+.env
 
 # vercel
 .vercel
