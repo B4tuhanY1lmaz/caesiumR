@@ -6,28 +6,27 @@ import { Button } from "@/components/ui/button"
 
 import { useModal } from "@/components/modals/hooks/use-modal-store"
 
-function CookiesModal() {
+function UserSettingsModal() {
     const { isOpen, onClose, type, data } = useModal()
-    const isModalOpen = isOpen && type === "cookies"
+    const isModalOpen = isOpen && type === "userSettings"
 
     return (
         <Dialog open={isModalOpen} onOpenChange={() => onClose()}>
             <DialogContent>
                 <DialogHeader>
                     <DialogTitle>
-                        Before you continue.
+                        Settings
                     </DialogTitle>
                 </DialogHeader>
                 <div>
-                    <p>TO-DO Create the content for Cookies modal</p>
+                    <p>TO-DO Create the contents of User settings</p>
                 </div>
                 <DialogFooter className="mt-2">
-                    <Button variant="ghost">Learn more.</Button>
-                    <Button>Continue with cookies.</Button>
+                    <Button>Save</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>
     )
 }
 
-export default CookiesModal
+export default UserSettingsModal

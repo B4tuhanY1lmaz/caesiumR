@@ -6,17 +6,19 @@ import {
     DropdownMenu, DropdownMenuContent, DropdownMenuItem,
     DropdownMenuSeparator, DropdownMenuTrigger, DropdownMenuLabel, DropdownMenuGroup
 } from "@/components/ui/dropdown-menu"
-import { User, Settings, LifeBuoy, LogOut } from "lucide-react";
+import { User, Settings, LifeBuoy, LogOut } from "lucide-react"
 
 import { useSession, signIn, signOut } from "next-auth/react"
-import localFont from "next/font/local";
+import localFont from "next/font/local"
 import { useRouter } from "next/navigation"
+import { useModal } from "@/components/modals/hooks/use-modal-store"
 
 const MinecraftFont = localFont({ src: './Minecraft.woff2' })
 
 function UserButton() {
     const { data: session, status } = useSession()
     const router = useRouter()
+    const { onOpen } = useModal()
 
     if (status === "authenticated") {
         const username = session?.user.name
@@ -54,7 +56,7 @@ function UserButton() {
                                     <Settings className="ml-auto h-4 w-4"/>
                                 </DropdownMenuItem>
                                 )}
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={() => onOpen("userSettings", session)}>
                                 <p>Settings</p>
                                 <Settings className="ml-auto h-4 w-4"/>
                             </DropdownMenuItem>
