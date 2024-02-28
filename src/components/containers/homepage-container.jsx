@@ -1,4 +1,3 @@
-
 import InfoSection from "@/components/home/info-section"
 import HomepageCards from "@/components/home/homepage-cards"
 import HeroImage from "@/components/body/hero-image"
