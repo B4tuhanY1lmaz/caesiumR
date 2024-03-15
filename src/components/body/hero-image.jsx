@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import localFont from "next/font/local";
 
@@ -9,8 +8,8 @@ function HeroImage({ header, description, image }) {
             <div
                 className="relative overflow-hidden bg-center h-[250px] w-full z-0 rounded-2xl">
                 <Image src={image} alt={"Hero Image"}
-                       width={1920} height={600}
-                       className="justify-center mx-auto"
+                       width={1600} height={250}
+                       className="justify-center items-center w-full mx-auto"
                 />
                 <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full
                 overflow-hidden bg-fixed bg-black/60"

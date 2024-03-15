@@ -3,8 +3,10 @@ import { getPostMetadata } from "@/lib/getPostMetadata"
 import HeroSection from "@/components/body/hero-section"
 import BlogCard from "@/components/blog/blog-card"
 
+import readConfig from "/config/siteconfig.json"
+
 export const metadata = {
-    title: "CaesiumR Blog"
+    title: `Blog | ${readConfig.siteName}`,
 }
 
 async function BlogPage() {

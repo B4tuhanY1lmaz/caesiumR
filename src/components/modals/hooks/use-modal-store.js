@@ -1,6 +1,6 @@
 import { create } from "zustand"
 
-const modalType = ["cookies, userSettings"]
+const modalType = ["cookies, userSettings, deleteUser"]
 
 const useModal = create((set) => ({
     type: null,

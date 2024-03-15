@@ -10,6 +10,11 @@ function CookiesModal() {
     const { isOpen, onClose, type, data } = useModal()
     const isModalOpen = isOpen && type === "cookies"
 
+    const handleAcceptCookies = () => {
+        localStorage.setItem("cookiesAccepted", "True")
+        return onClose()
+    }
+
     return (
         <Dialog open={isModalOpen} onOpenChange={() => onClose()}>
             <DialogContent>
@@ -23,7 +28,7 @@ function CookiesModal() {
                 </div>
                 <DialogFooter className="mt-2">
                     <Button variant="ghost">Learn more.</Button>
-                    <Button>Continue with cookies.</Button>
+                    <Button onClick={() => handleAcceptCookies()}>Continue with cookies.</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

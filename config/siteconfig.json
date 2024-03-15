@@ -1,0 +1,14 @@
+{
+    "siteName": "caesiumR",
+    "siteUrl": "example.com",
+    "siteDescription": "caesiumR is a NextJS based website.",
+    "ogpImage": "/hero/4.png",
+    "server": {
+        "name": "The Batuhan's Network SMP",
+        "description": "A cracked SMP server with tweaks over Vanilla Minecraft",
+        "serverIP": "127.0.0.1",
+        "serverPort": 25565,
+        "serverUrl": "play.tbnmc.xyz",
+        "versionText": "1.20.1 + Voice Chat + Terralith"
+    }
+}

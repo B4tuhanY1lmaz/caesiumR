@@ -12,8 +12,8 @@ import { Button } from "@/components/ui/button"
 import {ArrowUpDown, ChevronDown} from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar"
 
+import { useModal } from "@/components/modals/hooks/use-modal-store"
 import axios from "axios"
-import { useRouter } from "next/navigation"
 
 // TODO: Finish this shit
 
@@ -24,12 +24,15 @@ const updateRole = async (id, role) => {
     }
     const values = JSON.stringify(data)
     await axios.post("/dash/users/api", values)
-    return
 }
 
 const terminateSessions = async (id) => {
     await axios.delete(`/dash/users/api/${id}/session`)
-    return
+}
+
+const deleteUser = (user) => {
+    const { onOpen } = useModal()
+    return onOpen("deleteUser", user)
 }
 
 export const columns = [
@@ -162,10 +165,6 @@ export const columns = [
                         <DropdownMenuSeparator />
                         <DropdownMenuItem className="text-rose-300" onClick={() => terminateSessions(user.id)}>
                             Terminate all sessions
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem className="text-rose-700">
-                            Delete Member
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>

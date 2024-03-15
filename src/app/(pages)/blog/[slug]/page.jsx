@@ -7,6 +7,29 @@ import PostPageComments from "@/components/blog/comment-card"
 import WriteCommentCard from "@/components/blog/write-comment-card"
 import BlogSuggestedCarousel from "@/components/blog/blog-suggested-carousel";
 
+export async function generateMetadata(props) {
+    const slug = props.params.slug
+    const postContent = await getPostContent(slug)
+    const ImageUrl = `${postContent.image}`
+
+    return {
+        title: postContent.title,
+        openGraph: {
+            type: `article`,
+            publishedTime: new Date(postContent.date).toISOString(),
+            authors: postContent.author.name,
+            images: [
+                {
+                    url: ImageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: `Preview image for ${postContent.title}`,
+                }
+            ],
+        },
+    }
+}
+
 async function BlogPostPage(props) {
     const slug = props.params.slug
     const PostContent = await getPostContent(slug)
