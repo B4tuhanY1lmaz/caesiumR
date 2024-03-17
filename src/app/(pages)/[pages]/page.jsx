@@ -2,6 +2,7 @@ import fs from "fs"
 import Markdown from "markdown-to-jsx"
 import matter from "gray-matter"
 import { notFound } from "next/navigation"
+import readConfig from "/config/siteconfig.json"
 
 import HeroSection from "@/components/body/hero-section"
 
@@ -9,8 +10,18 @@ const getPageContent = (page) => {
     const folder = "config/pages/";
     const file = `${folder}${page}.md`;
     const content = fs.readFileSync(file, "utf8");
-    const matterResult = matter(content)
-    return matterResult;
+    return matter(content)
+}
+
+export async function generateMetadata(props) {
+    const slug = props.params.page
+    const pageContent = getPageContent(slug)
+    return {
+        title: `${pageContent.data.title} | ${readConfig.siteName}`,
+        openGraph: {
+            type: `article`,
+        },
+    }
 }
 
 function MarkPages(props) {

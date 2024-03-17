@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 
 import CookiesModal from "@/components/modals/cookie-modal"
 import UserSettingsModal from "@/components/modals/user-settings-modal"
+import DeleteUserModal from "@/components/modals/admin/delete-user-modal"
 
 function ModalProvider() {
     const [isMounted, setIsMounted] = useState(false)
@@ -20,6 +21,7 @@ function ModalProvider() {
         <>
             <CookiesModal />
             <UserSettingsModal />
+            <DeleteUserModal />
         </>
     )
 }
